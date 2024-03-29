@@ -1,0 +1,110 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// $my-primary: mat.define-palette(mat.$indigo-palette, 500);
+// $my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $my-typography: mat.define-typography-config(
+//   $font-family: "Bebas Neueu",
+// );
+
+// $my-primary: mat.define-palette(mat.$indigo-palette, 500);
+// $my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$mk-primary: (
+  50: #d9e8ef,
+  100: #cce0ea,
+  200: #bfd8e4,
+  300: #99c1d4,
+  400: #4d93b4,
+  500: #006494,
+  600: #005a85,
+  700: #004b6f,
+  800: #003c59,
+  900: #003149,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+$mk-secondary: (
+  50: #e7f8f0,
+  100: #dff6ec,
+  200: #d7f4e7,
+  300: #beedd8,
+  400: #8ee0bb,
+  500: #5dd39e,
+  600: #54be8e,
+  700: #469e77,
+  800: #387f5f,
+  900: #2e674d,
+  contrast: (
+    50: var(--on-secondary),
+    100: var(--on-secondary),
+    200: var(--on-secondary),
+    300: var(--on-secondary),
+    400: var(--on-secondary),
+    500: var(--on-secondary),
+    600: var(--on-secondary),
+    700: var(--on-secondary),
+    800: var(--on-secondary),
+    900: var(--on-secondary),
+  ),
+);
+$mk-warn: (
+  50: #faf4f1,
+  100: #f8f1ec,
+  200: #f6ede8,
+  300: #f1e3d9,
+  400: #e6cdbd,
+  500: #dbb8a1,
+  600: #c5a691,
+  700: #a48a79,
+  800: #836e61,
+  900: #6b5a4f,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$mk-primary-palette: mat.define-palette($mk-primary);
+$mk-secondary-palette: mat.define-palette($mk-secondary);
+$mk-warn-palette: mat.define-palette($mk-warn);
+
+$mk-typography: mat.define-typography-config(
+  $font-family: "Lato",
+);
+
+$mk-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $mk-primary-palette,
+      accent: $mk-secondary-palette,
+      warn: $mk-warn-palette,
+    ),
+    typography: $mk-typography,
+    density: 0,
+  )
+);
+
+@include mat.core-theme($mk-theme);
+@include mat.button-theme($mk-theme);
+@include mat.icon-button-theme($mk-theme);
+// @include mat.all-component-themes($mk-theme);

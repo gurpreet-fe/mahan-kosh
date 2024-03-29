@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./app/styles/themes/theme-mahaan-kosh";
+@import "./app/styles/typography";
+@import "./app/styles/material";
+@import "./app/styles/reset";
+@import "./app/styles/fonts";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "kahan-kosh";
+  src: url("assets/kahan-kosh.ttf");
+}
+@font-face {
+  font-family: "kahan-script";
+  src: url("assets/kahan-script.ttf");
+}
+
+.lexeme-definition {
+  font-family: "kahan-script";
+  // font-family: 'kahan-kosh';
+}
+.lexeme {
+  font-weight: 700;
+  font-size: large;
+}
+.definition {
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.stretched-link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+[name="lexeme"] {
+  font-family: "kahan-kosh";
+}
+
+.mat-mdc-unelevated-button {
+  --mdc-filled-button-container-shape: 0px !important;
+}

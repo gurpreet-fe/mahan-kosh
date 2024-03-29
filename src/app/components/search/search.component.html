@@ -1,0 +1,39 @@
+<div class="search-bar">
+  <div class="search-bar-wrapper">
+    <input
+      class="lexeme-definition search-bar-input"
+      type="text"
+      name="lexeme"
+      id=""
+      [(ngModel)]="searchBarInput"
+    />
+    <button class="search-bar-keyboard" (click)="toggleKeyboard()">
+      <mat-icon>keyboard</mat-icon>
+    </button>
+    <button matRipple class="search-bar-submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</div>
+
+@if (lexemeHits()) {
+<div class="search-suggestions">
+  <ul class="hit-list">
+    @for (lexemeHit of lexemeHits(); track $index) {
+    <li class="hit-list__item">
+      <a
+        class="lexeme-definition"
+        [routerLink]="['/lexeme', lexemeHit.id]"
+        mkStretchedLink
+      >
+        {{ lexemeHit.lexeme.slice(0, -1) }}
+      </a>
+    </li>
+    }
+  </ul>
+</div>
+}
+
+@if (showKeyboard) {
+  <mk-keyboard (keyClick)="keyClick($event)" [hidden]="true"></mk-keyboard>
+}

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
+import { Component, HostBinding, output } from '@angular/core';
 
 @Component({
   selector: 'mk-key',
@@ -8,7 +8,7 @@ import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
 })
 export class KeyComponent {
   @HostBinding('class') class = 'key-container';
-  @Output() keyClick = new EventEmitter();
+  keyClick = output();
 
   emitKeyClick() {
     this.keyClick.emit();

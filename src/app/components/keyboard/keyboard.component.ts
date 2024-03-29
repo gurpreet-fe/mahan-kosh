@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Output } from '@angular/core';
+import { Component, HostBinding, output } from '@angular/core';
 import { KeyComponent } from '../key/key.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { KeyComponent } from '../key/key.component';
 })
 export class KeyboardComponent {
   @HostBinding('class') class = 'keyboard';
-  @Output() keyClick = new EventEmitter<string>();
+  keyClick = output<string>();
 
   gurmukhiAlphabetMap = new Map([
     ['ੳ', 'A'], ['ਅ', 'd'], ['ੲ', 'D'], ['ਸ', 'm'], ['ਹ', 'u'],

@@ -17,16 +17,28 @@ body {
 
 @font-face {
   font-family: "kahan-kosh";
-  src: url("assets/kahan-kosh.ttf");
+  src: url("assets/fonts/kahan/kahan-kosh.ttf");
 }
 @font-face {
   font-family: "kahan-script";
-  src: url("assets/kahan-script.ttf");
+  src: url("assets/fonts/kahan/kahan-script.ttf");
+}
+
+@font-face {
+  font-family: "devanagri";
+  src: url("assets/fonts/devanagri/mk-devanagri.ttf");
+}
+@font-face {
+  font-family: "shahmukhi";
+  src: url("assets/fonts/shahmukhi/mk-shahmukhi.ttf");
+}
+@font-face {
+  font-family: "gurmukhi";
+  src: url("assets/fonts/gurmukhi/mk-gurmukhi.woff");
 }
 
 .lexeme-definition {
-  font-family: "kahan-script";
-  // font-family: 'kahan-kosh';
+  font-family: "gurmukhi";
 }
 .lexeme {
   font-weight: 700;

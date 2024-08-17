@@ -84,15 +84,15 @@ $mk-warn: (
   ),
 );
 
-$mk-primary-palette: mat.define-palette($mk-primary);
-$mk-secondary-palette: mat.define-palette($mk-secondary);
-$mk-warn-palette: mat.define-palette($mk-warn);
+$mk-primary-palette: mat.m2-define-palette($mk-primary);
+$mk-secondary-palette: mat.m2-define-palette($mk-secondary);
+$mk-warn-palette: mat.m2-define-palette($mk-warn);
 
-$mk-typography: mat.define-typography-config(
+$mk-typography: mat.m2-define-typography-config(
   $font-family: "Lato",
 );
 
-$mk-theme: mat.define-light-theme(
+$mk-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $mk-primary-palette,

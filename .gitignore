@@ -45,3 +45,10 @@ Thumbs.db
 .firebase
 *-debug.log
 .runtimeconfig.json
+
+# Dotenv
+.env
+
+# Meilisearch
+/data.ms
+/dumps

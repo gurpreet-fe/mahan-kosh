@@ -7,6 +7,9 @@
     align-items: center;
     height: 100%;
   }
+  &__item {
+    // flex-basis: calc(1 / 3 * 100%);
+  }
   &__logo {
     font-size: 28px;
   }
@@ -14,6 +17,7 @@
     display: flex;
     gap: 20px;
     font-size: 18px;
+    justify-content: end;
   }
   &__btn {
   }

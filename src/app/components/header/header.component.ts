@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { SharedModule } from '../../shared/shared.module';
+import { LayoutFacade } from '../../state/layout/layout.facade';
 
 @Component({
   selector: 'mk-header',
@@ -8,4 +10,10 @@ import { SharedModule } from '../../shared/shared.module';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent implements OnInit {
+  layout$ = this.layoutFacade.layout$;
+
+  constructor(private layoutFacade: LayoutFacade) {}
+
+  ngOnInit(): void {}
+}

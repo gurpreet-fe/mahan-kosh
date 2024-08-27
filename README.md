@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Running meilisearch server
 
-Run `meilisearch --master <MEILISEARCH_MASTER_KEY>` for meiliesearch server
+Run `meilisearch --master-key <MEILISEARCH_MASTER_KEY>` for meiliesearch server

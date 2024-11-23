@@ -1,4 +1,9 @@
 @for (letter of gurmukhiAlphabetKeys; track $index) {
-<mk-key (keyClick)="emitKeyValue(gurmukhiAlphabetVals[$index])">{{ letter }}</mk-key>
+  <!-- <mk-key (keyClick)="emitKeyValue(gurmukhiAlphabetVals[$index])">{{ letter }}</mk-key> -->
+  <mk-key (keyClick)="emitKeyValue(letter)">{{ letter }}</mk-key>
 }
-<div class="empty"></div>
+@for (letter of matrasKeys; track $index) {
+<!-- <mk-key (keyClick)="emitKeyValue(matrasVals[$index])">{{ letter }}</mk-key> -->
+<mk-key (keyClick)="emitKeyValue(letter)">{{ letter }}</mk-key>
+}
+<!-- <div class="empty"></div> -->

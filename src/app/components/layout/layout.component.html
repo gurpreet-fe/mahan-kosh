@@ -1,19 +1,12 @@
-<button (click)="change()" style="position: fixed; top: 10px; left: 10px;">mode</button>
-<mk-header></mk-header>
+<div class="h-screen">
+  <mk-header></mk-header>
 
-<div class="container">
-  <div class="logo bebas-neue" [@layout]="layoutMode">MAHAAN KOSH</div>
-  <mk-search></mk-search>
-  <div class="lexeme-definition">{{ val }}</div>
+  <div class="container px-4 mx-auto">
+    <div class="logo bebas-neue" [@layout]="layoutMode">MAHAAN KOSH</div>
+    <mk-search></mk-search>
+  </div>
 </div>
 
-<ul>
-  @for (item of list(); track $index) {
-  <li class="lexeme-definition">
-    <a [routerLink]="['/lexeme', item.id]">
-      <span class="lexeme">{{ item.lexeme }}</span> :
-      <span class="definition">{{ item.definition }}</span>
-    </a>
-  </li>
-  }
-</ul>
+<div>
+  <mk-footer> </mk-footer>
+</div>

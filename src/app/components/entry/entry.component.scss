@@ -1,0 +1,34 @@
+.entry-card {
+  background-color: rgb(var(--color-surface-400));
+  color: rgb(var(--on-surface));
+}
+
+.mat-divider {
+  --mat-divider-width: 1px;
+}
+
+ul.entry-definition-list {
+  list-style: gurmukhi;
+  list-style-position: outside;
+  font-family: "Tiro Gurmukhi";
+
+  margin-top: 20px;
+
+  li {
+    font-size: 16px;
+    line-height: 1.5em;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    & {
+      margin-left: 16px;
+      padding-left: 4px;
+    }
+  }
+
+  li + li {
+    margin-top: 8px;
+  }
+}

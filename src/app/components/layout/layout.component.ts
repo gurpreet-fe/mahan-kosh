@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { tap } from 'rxjs';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -15,6 +15,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'mk-layout',
@@ -22,10 +23,10 @@ import {
   imports: [
     SharedModule,
     RouterOutlet,
-    RouterLink,
     HeaderComponent,
     SearchComponent,
     KeyboardComponent,
+    FooterComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
@@ -37,6 +38,7 @@ import {
           opacity: 1,
           height: 'auto',
           'margin-top': '96px',
+          visibility: 'visible',
         })
       ),
       state(
@@ -44,7 +46,8 @@ import {
         style({
           opacity: 0,
           height: 0,
-          'margin-top': 0
+          'margin-top': 0,
+          visibility: 'hidden',
         })
       ),
       transition('standard => compact', [animate('0.1s ease-in-out')]),
@@ -71,13 +74,5 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.layout$.subscribe();
-  }
-
-  change() {
-    if (this.layoutMode === 'standard') {
-      this.layoutFacade.setLayout('compact');
-    } else {
-      this.layoutFacade.setLayout('standard');
-    }
   }
 }

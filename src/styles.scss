@@ -16,45 +16,37 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Lato", Roboto, "Helvetica Neue", sans-serif;
 }
 
-@font-face {
-  font-family: "kahan-kosh";
-  src: url("assets/fonts/kahan/kahan-kosh.ttf");
-}
+// primary
 @font-face {
   font-family: "kahan-script";
-  src: url("assets/fonts/kahan/kahan-script.ttf");
+  src: url("assets/fonts/kahan/kahan-script.woff");
+}
+// secondary
+@font-face {
+  font-family: "kahan-kosh";
+  src: url("assets/fonts/kahan/kahan-kosh.woff");
 }
 
 @font-face {
   font-family: "devanagri";
-  src: url("assets/fonts/devanagri/mk-devanagri.ttf");
+  src: url("assets/fonts/devanagri/mk-devanagri.woff");
 }
 @font-face {
   font-family: "shahmukhi";
-  src: url("assets/fonts/shahmukhi/mk-shahmukhi.ttf");
+  src: url("assets/fonts/shahmukhi/mk-shahmukhi.woff");
 }
 @font-face {
   font-family: "gurmukhi";
   src: url("assets/fonts/gurmukhi/mk-gurmukhi.woff");
 }
 
-.lexeme-definition {
-  font-family: "gurmukhi";
-}
-.lexeme {
-  font-weight: 700;
-  font-size: large;
-}
-.definition {
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
+// .container {
+//   max-width: 960px;
+//   margin: 0 auto;
+// }
 
 .h-full {
   height: 100%;
@@ -69,10 +61,52 @@ body {
   }
 }
 
-[name="lexeme"] {
-  font-family: "kahan-kosh";
+[name="headword"] {
+  font-family: "kahan-script";
 }
 
 .mat-mdc-unelevated-button {
   --mdc-filled-button-container-shape: 0px !important;
+}
+
+.mat-mdc-form-field-infix {
+  --mat-form-field-container-height: 48px;
+}
+.mdc-text-field--outlined .mat-mdc-form-field-infix,
+.mdc-text-field--no-label .mat-mdc-form-field-infix {
+  --mat-form-field-container-vertical-padding: 12px;
+}
+.mat-mdc-notch-piece {
+  --mdc-outlined-text-field-container-shape: 0;
+}
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+  --mdc-outlined-text-field-outline-color: rgba(0, 0, 0, 1);
+}
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.font-kahan-script {
+  font-family: 'kahan-script' !important;
+}
+
+.font-kahan-kosh {
+  font-family: 'kahan-kosh' !important;
+}
+
+.font-shahmukhi {
+  font-family: 'shahmukhi' !important;
+}
+
+.font-devanagri {
+  font-family: 'devanagri' !important;
+}
+
+.font-gurmukhi {
+  font-family: 'gurmukhi' !important;
+}
+
+html {
+  --mat-form-field-container-text-font: 'Tiro Gurmukhi', 'Roboto';
+  --mat-option-label-text-font: 'Tiro Gurmukhi', 'Roboto';
 }

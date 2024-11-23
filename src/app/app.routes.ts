@@ -1,4 +1,11 @@
 import { Routes } from '@angular/router';
-import { LexemeComponent } from './components/lexeme/lexeme.component';
+import { EntryComponent } from './components/entry/entry.component';
+import { EntryResolver } from './resolvers/entry.resolver';
 
-export const routes: Routes = [{ path: 'lexeme/:id', component: LexemeComponent }];
+export const routes: Routes = [
+  {
+    path: 'entry/:id',
+    component: EntryComponent,
+    resolve: { entry: EntryResolver },
+  },
+];

@@ -8,32 +8,16 @@
 }
 
 .search-bar {
-  height: 50px;
+  display: flex;
+  width: 100%;
 
-  &-wrapper {
-    display: flex;
-    height: 100%;
-    border: 1px solid black;
-  }
-
-  &:hover {
-    .search-bar-keyboard {
-      // visibility: visible;
+  &-clear {
+    &:hover {
+      color: rgb(var(--color-primary-500));
     }
   }
 
-  &-input {
-    height: 100%;
-    flex-grow: 1;
-    padding: 8px;
-    border: none;
-
-    &:focus-visible {
-      outline: none;
-    }
-  }
   &-keyboard {
-    // visibility: hidden;
     padding: 10px;
     border: none;
     background-color: transparent;
@@ -47,13 +31,13 @@
       color: rgb(var(--color-primary-500));
     }
   }
+
   &-submit {
     width: 48px;
     height: 48px;
     background-color: rgb(var(--color-primary-500));
     color: rgb(var(--on-primary));
     border: none;
-    border-left: 1px solid black;
 
     &:hover {
       cursor: pointer;
@@ -77,7 +61,10 @@
   }
 }
 
-a {
-  text-decoration: none;
-  color: white;
+.color-primary-500 {
+  color: rgb(var(--color-primary-500));
+}
+
+.mat-mdc-form-field {
+  flex-grow: 1;
 }

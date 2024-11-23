@@ -1,24 +1,33 @@
 :host {
   display: grid;
-  grid-template-columns: repeat(5, min-content);
-  width: min-content;
+  grid-template-columns: repeat(10, 1fr);
+  background-color: #fff;
 
-  & :nth-child(10n + 1),
-  & :nth-child(10n + 2),
-  & :nth-child(10n + 3),
-  & :nth-child(10n + 4),
-  & :nth-child(10n + 5) {
+  & :nth-child(20n + 1),
+  & :nth-child(20n + 2),
+  & :nth-child(20n + 3),
+  & :nth-child(20n + 4),
+  & :nth-child(20n + 5),
+  & :nth-child(20n + 6),
+  & :nth-child(20n + 7),
+  & :nth-child(20n + 8),
+  & :nth-child(20n + 9),
+  & :nth-child(20n + 10) {
     background-color: rgb(var(--color-surface-500) / 0.9);
-    padding: 5px 10px;
+    padding: 6px 3px;
   }
-
-  & :nth-child(10n + 6),
-  & :nth-child(10n + 7),
-  & :nth-child(10n + 8),
-  & :nth-child(10n + 9),
-  & :nth-child(10n + 10) {
+  & :nth-child(20n + 11),
+  & :nth-child(20n + 12),
+  & :nth-child(20n + 13),
+  & :nth-child(20n + 14),
+  & :nth-child(20n + 15),
+  & :nth-child(20n + 16),
+  & :nth-child(20n + 17),
+  & :nth-child(20n + 18),
+  & :nth-child(20n + 19),
+  & :nth-child(20n + 20) {
     background-color: rgb(var(--color-surface-500) / 0.7);
-    padding: 5px 10px;
+    padding: 6px 3px;
   }
 
   & .empty {
@@ -26,8 +35,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(10, min-content);
-
     & :nth-child(20n + 1),
     & :nth-child(20n + 2),
     & :nth-child(20n + 3),

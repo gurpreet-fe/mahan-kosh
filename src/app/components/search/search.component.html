@@ -1,39 +1,83 @@
-<div class="search-bar">
-  <div class="search-bar-wrapper">
+<form class="search-bar">
+  <mat-form-field appearance="outline">
     <input
-      class="lexeme-definition search-bar-input"
       type="text"
-      name="lexeme"
-      id=""
-      [(ngModel)]="searchBarInput"
+      aria-label="Headword"
+      class="headword-definition"
+      matInput
+      #headwordInput
+      [formControl]="headwordControl"
+      [matAutocomplete]="auto"
+      [matAutocompleteConnectedTo]="origin"
+      matAutocompletePosition="below"
     />
-    <button class="search-bar-keyboard" (click)="toggleKeyboard()">
+    <button
+      matSuffix
+      class="search-bar-clear"
+      (click)="clearSearchBar()"
+      type="reset"
+      [ngClass]="{ hidden: !headwordInput.value }"
+    >
+      <mat-icon>close_small</mat-icon>
+    </button>
+    <button
+      matSuffix
+      [ngClass]="{
+        'search-bar-keyboard': true,
+        'color-primary-500': showKeyboard
+      }"
+      (click)="toggleKeyboard()"
+      type="button"
+    >
       <mat-icon>keyboard</mat-icon>
     </button>
-    <button matRipple class="search-bar-submit">
-      <mat-icon>search</mat-icon>
-    </button>
+  </mat-form-field>
+  <button matRipple class="search-bar-submit" type="submit">
+    <mat-icon>search</mat-icon>
+  </button>
+</form>
+
+<div class="relative">
+  <div class="absolute left-0 right-0">
+    @if (showKeyboard) {
+    <mk-keyboard
+      class="tiro-gurmukhi"
+      (keyClick)="keyClick($event)"
+    ></mk-keyboard>
+    }
+
+    <div matAutocompleteOrigin #origin="matAutocompleteOrigin">
+      <mat-autocomplete
+        autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="closeKeyboard()"
+      >
+        @for (entry of entryHits$ | async; track entry.id) {
+        <mat-option [value]="entry.unicodeHeadword">
+          <a mkStretchedLink [routerLink]="'/entry/' + entry.unicodeHeadword">
+            {{ entry.unicodeHeadword }}
+          </a>
+        </mat-option>
+        }
+      </mat-autocomplete>
+    </div>
   </div>
 </div>
 
-@if (lexemeHits()) {
-<div class="search-suggestions">
-  <ul class="hit-list">
-    @for (lexemeHit of lexemeHits(); track $index) {
-    <li class="hit-list__item">
-      <a
-        class="lexeme-definition"
-        [routerLink]="['/lexeme', lexemeHit.id]"
-        mkStretchedLink
-      >
-        {{ lexemeHit.lexeme.slice(0, -1) }}
-      </a>
-    </li>
-    }
-  </ul>
-</div>
-}
+<table class="hidden">
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  @for (item of items; track $index) {
+  <tr>
+    <td>
+      <p class="leading-6 font-kahan-script">{{ item[0] }}</p>
+    </td>
+    <td>
+      <p class="leading-6 ">{{ item[1] }}</p>
+    </td>
+  </tr>
+  }
+</table>
 
-@if (showKeyboard) {
-  <mk-keyboard (keyClick)="keyClick($event)" [hidden]="true"></mk-keyboard>
-}

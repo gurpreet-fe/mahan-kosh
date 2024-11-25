@@ -12,8 +12,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: pnpm/action-setup@v4
-        uses: Install pnpm
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
           version: 9
           run_install: false

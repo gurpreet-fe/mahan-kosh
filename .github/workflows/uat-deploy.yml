@@ -53,6 +53,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
           source: dist/*
           target: ${{ secrets.PATH }}
           rm: true

@@ -36,11 +36,11 @@ jobs:
           name: build-artifact
           path: dist
 
-  # deploy:
-  #   runs-on: self-hosted
-  #   needs: build-angular
+  deploy:
+    runs-on: self-hosted
+    needs: build-angular
 
-  #   steps:
+    steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -53,7 +53,14 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          key: ${{ secrets.KEY }}
           source: dist/*
           target: ${{ secrets.PATH }}
           rm: true
+
+      - name: Run script
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script_path: ${{ secrets.SCRIPT_PATH }}

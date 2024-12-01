@@ -1,4 +1,4 @@
-name: Generate Angular build and deploy to UAT environment
+name: Generate Angular build, deploy to UAT environment and cleanup
 on:
   pull_request:
     types:
@@ -61,6 +61,18 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: ${{ secrets.SCRIPT }}
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Run script
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{secrets.HOST}}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: ${{ secrets.SCRIPT }}

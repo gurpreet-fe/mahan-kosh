@@ -1,55 +1,54 @@
-<header class="header">
-  <div class="container mx-auto px-4 h-full">
-    <div class="header__wrapper">
-      <div class="header__item">
-        <div class="header__logo">
-          <a routerLink="/">
-            <!-- @let layout = layout$ | async; @if (layout === 'compact') {
+<div class="container mx-auto px-4 h-full">
+  <div class="header__wrapper">
+    <div class="header__item">
+      <div class="header__logo">
+        <a routerLink="/">
+          <!-- @let layout = layout$ | async; @if (layout === 'compact') {
+          <img
+            id="mahan-kosh-logo"
+            src="assets/svg/mahan-kosh-logo.svg"
+            alt="mahan Kosh"
+          />
+          } @else if (layout === 'standard') {
+          <img
+            id="mahan-kosh-logo"
+            src="assets/svg/mahan-kosh-logo-full.svg"
+            alt="Mahan Kosh"
+          />
+          } -->
+          <div class="sm:hidden">
             <img
-              id="mahaan-kosh-logo"
-              src="assets/svg/mahaan-kosh-logo.svg"
-              alt="Mahaan Kosh"
+              id="mahan-kosh-logo"
+              src="assets/svg/mahan-kosh-logo.svg"
+              alt="Mahan Kosh"
+            />
+          </div>
+          <div class="hidden sm:block">
+            @let layout = layout$ | async; @if (layout === 'compact') {
+            <img
+              id="mahan-kosh-logo"
+              src="assets/svg/mahan-kosh-logo-full.svg"
+              alt="Mahan Kosh"
             />
             } @else if (layout === 'standard') {
             <img
-              id="mahaan-kosh-logo"
-              src="assets/svg/mahaan-kosh-logo-full.svg"
-              alt="Mahaan Kosh"
+              id="mahan-kosh-logo"
+              src="assets/svg/mahan-kosh-logo.svg"
+              alt="Mahan Kosh"
             />
-            } -->
-            <div class="sm:hidden">
-              <img
-                id="mahaan-kosh-logo"
-                src="assets/svg/mahaan-kosh-logo.svg"
-                alt="Mahaan Kosh"
-              />
-            </div>
-            <div class="hidden sm:block">
-              @let layout = layout$ | async; @if (layout === 'compact') {
-              <img
-                id="mahaan-kosh-logo"
-                src="assets/svg/mahaan-kosh-logo-full.svg"
-                alt="Mahaan Kosh"
-              />
-              } @else if (layout === 'standard') {
-              <img
-                id="mahaan-kosh-logo"
-                src="assets/svg/mahaan-kosh-logo.svg"
-                alt="Mahaan Kosh"
-              />
-              }
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="header__item">
-        <div class="header__btns">
-          <div class="header__btn"><button mat-button>About</button></div>
-          <div class="header__btn">
-            <button mat-flat-button color="primary">Support</button>
+            }
           </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="header__item">
+      <div class="header__btns">
+        <!-- <div class="header__btn"><button mat-button>About</button></div> -->
+        <div class="header__btn">
+          <button mat-flat-button color="primary">Support</button>
         </div>
       </div>
     </div>
   </div>
-</header>
+</div>

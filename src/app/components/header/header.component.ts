@@ -9,6 +9,9 @@ import { LayoutFacade } from '../../state/layout/layout.facade';
   imports: [SharedModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  host: {
+    class: 'header'
+  }
 })
 export class HeaderComponent implements OnInit {
   layout$ = this.layoutFacade.layout$;

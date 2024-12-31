@@ -1,19 +1,9 @@
 :host {
+  --mdc-text-button-label-text-color: white;
+
   display: block;
-  padding: 12px 0;
-}
+  padding: 56px 0;
 
-.footer {
-  &-social-icon {
-    background-color: rgb(var(--color-surface-500));
-    padding: 8px;
-    border-radius: 100px;
-    border: 1px solid rgb(var(--color-surface-500));
-
-    img {
-      height: 16px;
-      width: 16px;
-      object-fit: contain;
-    }
-  }
+  background-color: rgb(var(--color-surface-600));
+  color: white;
 }

@@ -15,8 +15,6 @@ import { StretchedLinkDirective } from '@directives/stretched-link/stretched-lin
 import { MeiliSearchService } from '@services/meili-search.service';
 import { SharedModule } from '../../shared/shared.module';
 import { Entry } from '../../types/entry.type';
-import { KeyboardComponent } from '../keyboard/keyboard.component';
-import { gurmukhi, romanised } from './data';
 
 @Component({
   selector: 'mk-search',
@@ -44,8 +42,6 @@ export class SearchComponent implements OnInit {
   headwordControl = new FormControl('');
   showKeyboard = false;
   entryHits$ = new BehaviorSubject<Entry[]>([]);
-
-  items = this.zip(romanised, gurmukhi);
 
   constructor(private meilisearchService: MeiliSearchService) {}
 
@@ -88,9 +84,5 @@ export class SearchComponent implements OnInit {
 
   clearSearchBar() {
     this.headwordControl.reset('');
-  }
-
-  zip(a: any[], b: any[]) {
-    return a.map((k, i) => [k, b[i]]);
   }
 }

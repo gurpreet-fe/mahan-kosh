@@ -1,12 +1,15 @@
 <div class="h-screen">
   <mk-header></mk-header>
 
-  <div class="container px-4 mx-auto">
-    <div class="logo bebas-neue" [@layout]="layoutMode">MAHAAN KOSH</div>
+  <div class="container px-4 mx-auto mb-16">
+    <div class="logo-container" [@layout]="layoutMode">
+      <h1 class="logo">MAHAN KOSH</h1>
+    </div>
+
     <mk-search></mk-search>
   </div>
+
+  <router-outlet></router-outlet>
 </div>
 
-<div>
-  <mk-footer> </mk-footer>
-</div>
+<mk-footer> </mk-footer>

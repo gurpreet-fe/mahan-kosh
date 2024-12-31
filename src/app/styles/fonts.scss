@@ -3,7 +3,14 @@
 
 @font-face {
   font-family: "Bebas Neue";
-  src: url("/assets/fonts/bebas-neue/bebas-neue-regular.woff2") format("woff2");
+  src: url("../../assets/fonts/bebas-neue/bebas-neue-regular.woff2")
+    format("woff2");
+}
+
+.tiro-gurmukhi-regular-italic {
+  font-family: "Tiro Gurmukhi", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .bebas-neue {
@@ -17,8 +24,46 @@
   line-height: 1.6em;
 }
 
-.tiro-gurmukhi-regular-italic {
-  font-family: "Tiro Gurmukhi", serif;
-  font-weight: 400;
-  font-style: italic;
+// primary
+@font-face {
+  font-family: "kahan-script";
+  src: url("../../assets/fonts/kahan/kahan-script.woff");
+}
+// secondary
+@font-face {
+  font-family: "kahan-kosh";
+  src: url("../../assets/fonts/kahan/kahan-kosh.woff");
+}
+
+@font-face {
+  font-family: "devanagri";
+  src: url("../../assets/fonts/devanagri/mk-devanagri.woff");
+}
+@font-face {
+  font-family: "shahmukhi";
+  src: url("../../assets/fonts/shahmukhi/mk-shahmukhi.woff");
+}
+@font-face {
+  font-family: "gurmukhi";
+  src: url("../../assets/fonts/gurmukhi/mk-gurmukhi.woff");
+}
+
+.font-kahan-script {
+  font-family: "kahan-script" !important;
+}
+
+.font-kahan-kosh {
+  font-family: "kahan-kosh" !important;
+}
+
+.font-shahmukhi {
+  font-family: "shahmukhi" !important;
+}
+
+.font-devanagri {
+  font-family: "devanagri" !important;
+}
+
+.font-gurmukhi {
+  font-family: "gurmukhi" !important;
 }

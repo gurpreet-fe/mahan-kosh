@@ -113,3 +113,29 @@ $mk-theme: mat.m2-define-light-theme(
 @include mat.input-theme($mk-theme);
 @include mat.autocomplete-theme($mk-theme);
 // @include mat.all-component-themes($mk-theme);
+
+.mat-mdc-unelevated-button {
+  --mdc-filled-button-container-shape: 0px !important;
+}
+
+.mat-mdc-form-field-infix {
+  --mat-form-field-container-height: 48px;
+}
+.mdc-text-field--outlined .mat-mdc-form-field-infix,
+.mdc-text-field--no-label .mat-mdc-form-field-infix {
+  --mat-form-field-container-vertical-padding: 12px;
+}
+.mat-mdc-notch-piece {
+  --mdc-outlined-text-field-container-shape: 0;
+}
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+  --mdc-outlined-text-field-outline-color: rgba(0, 0, 0, 1);
+}
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+html {
+  --mat-form-field-container-text-font: "Tiro Gurmukhi", "Roboto";
+  --mat-option-label-text-font: "Tiro Gurmukhi", "Roboto";
+}

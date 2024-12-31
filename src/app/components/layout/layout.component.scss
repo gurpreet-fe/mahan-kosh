@@ -1,15 +1,19 @@
-:host {
-  // display: flex;
-  // flex-direction: column;
-  // height: 100%;
+.logo-container {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
 }
 
 .logo {
-  margin-top: 160px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  font-family: "Bebas Neue";
   font-size: 64px;
   text-align: center;
   color: rgb(var(--color-surface-500));
-  transition: margin 0.5s linear;
 
   @media screen and (min-width: 768px) {
     font-size: 96px;
@@ -23,9 +27,3 @@ mk-search {
 .keyboard {
   margin: 0 auto;
 }
-
-// :host[mode="compact"] {
-//   .logo {
-//     margin-top: 0;
-//   }
-// }

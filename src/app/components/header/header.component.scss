@@ -1,6 +1,9 @@
-.header {
+:host {
+  display: block;
   height: 84px;
+}
 
+.header {
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -23,6 +26,6 @@
   }
 }
 
-#mahaan-kosh-logo {
+#mahan-kosh-logo {
   height: 36px;
 }

@@ -1,24 +1,28 @@
-
-<mat-divider ngClass="!border-t !my-3" />
-
 <div class="container px-4 mx-auto">
-  <div class="flex flex-col md:flex-row items-center justify-between gap-2 flex-col-reverse">
-    <div>
-      <p>&copy; 2024 Mahaan Kosh. All rights reserved.</p>
-    </div>
+  <img
+    class="mb-5 h-8"
+    src="assets/svg/mahan-kosh-logo-full-inverse.svg"
+    alt="Mahan Kosh Logo"
+  />
 
-    <div class="flex-shrink-0">
-      <div>
-        <nav>
-          <ul class="flex flex-row gap-3 font-medium">
-            <li><a href="" mat-button>Github</a></li>
-            <li><a href="" mat-button>Instagram</a></li>
-            <li><a href="" mat-button>Terms</a></li>
-            <li><a href="" mat-button>Privacy</a></li>
-            <li><a href="" mat-button>Cookies</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <p>&copy; 2024 Mahan Kosh. All rights reserved.</p>
+
+    <nav class="flex-shrink-0">
+      <ul class="flex flex-col md:flex-row -ml-2 md:ml-0 gap-3">
+        <!-- <li><a mat-button routerLink="">Terms and Conditions</a></li>
+        <li><a mat-button routerLink="">Privacy Policy</a></li>
+        <li><a mat-button routerLink="">Cookies</a></li>
+        <li><a mat-button href="" target="_blank">Instagram</a></li> -->
+        <li>
+          <a
+            mat-button
+            href="https://github.com/gurpreet-fe/mahan-kosh"
+            target="_blank"
+            >Github</a
+          >
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>

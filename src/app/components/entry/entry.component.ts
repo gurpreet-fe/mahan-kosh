@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
-import { Entry } from '../../types/entry.type';
+import { Subject } from 'rxjs';
+
 import { MaterialModule } from '../../shared/material/material.module';
 import { LayoutFacade } from '../../state/layout/layout.facade';
-import { Layout } from '../../types/layout.type';
+import { Entry } from '../../types/entry.type';
 
 @Component({
   selector: 'mk-entry',

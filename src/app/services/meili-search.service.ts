@@ -16,6 +16,8 @@ export class MeiliSearchService implements SearchServiceInterface {
   constructor() {}
 
   search(headword: string): Observable<SearchResponse> {
-    return from(this.client.index('mk').search(headword));
+    return from(
+      this.client.index(environment.meilisearch.mkIndex).search(headword)
+    );
   }
 }

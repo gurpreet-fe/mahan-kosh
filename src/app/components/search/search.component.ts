@@ -10,8 +10,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
 
-import { StretchedLinkDirective } from '../../directives/stretched-link/stretched-link.directive';
-import { MeiliSearchService } from '../../services/meili-search.service';
+import { KeyboardComponent } from '@components/keyboard/keyboard.component';
+import { StretchedLinkDirective } from '@directives/stretched-link/stretched-link.directive';
+import { MeiliSearchService } from '@services/meili-search.service';
 import { SharedModule } from '../../shared/shared.module';
 import { Entry } from '../../types/entry.type';
 import { KeyboardComponent } from '../keyboard/keyboard.component';

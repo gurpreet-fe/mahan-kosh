@@ -7,11 +7,10 @@ import { LayoutFacade } from '../../state/layout/layout.facade';
 import { Entry } from '../../types/entry.type';
 
 @Component({
-  selector: 'mk-entry',
-  standalone: true,
-  imports: [MaterialModule],
-  templateUrl: './entry.component.html',
-  styleUrl: './entry.component.scss',
+    selector: 'mk-entry',
+    imports: [MaterialModule],
+    templateUrl: './entry.component.html',
+    styleUrl: './entry.component.scss'
 })
 export class EntryComponent implements OnInit, OnDestroy {
   entry = signal<Entry | undefined>(undefined);

@@ -2,11 +2,10 @@ import { Component, HostBinding, output } from '@angular/core';
 import { KeyComponent } from '../key/key.component';
 
 @Component({
-  selector: 'mk-keyboard',
-  standalone: true,
-  templateUrl: './keyboard.component.html',
-  styleUrl: './keyboard.component.scss',
-  imports: [KeyComponent],
+    selector: 'mk-keyboard',
+    templateUrl: './keyboard.component.html',
+    styleUrl: './keyboard.component.scss',
+    imports: [KeyComponent]
 })
 export class KeyboardComponent {
   @HostBinding('class') class = 'keyboard';

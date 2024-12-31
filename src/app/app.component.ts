@@ -10,7 +10,7 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [RouterOutlet, LayoutComponent],
 })
 export class AppComponent {
-  title = 'mahaan-kosh';
+  title = 'mahan-kosh';
 
   constructor() {}
 }

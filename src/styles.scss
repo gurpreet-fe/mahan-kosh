@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@use "./app/styles/tailwind";
+@use "./app/styles/themes/theme-mahan-kosh";
+@use "./app/styles/typography";
+@use "./app/styles/material";
+@use "./app/styles/fonts";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Lato", Roboto, "Helvetica Neue", sans-serif;
+}
 
-@import "./app/app.component";
+.stretched-link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}

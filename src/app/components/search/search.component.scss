@@ -33,6 +33,8 @@
   }
 
   &-submit {
+    display: grid;
+    place-content: center;
     width: 48px;
     height: 48px;
     background-color: rgb(var(--color-primary-500));

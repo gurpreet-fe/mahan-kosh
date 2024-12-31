@@ -3,11 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatAutocomplete,
-  MatAutocompleteModule,
   MatAutocompleteTrigger,
 } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput, MatInputModule } from '@angular/material/input';
 import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
 
 import { KeyboardComponent } from '@components/keyboard/keyboard.component';
@@ -20,17 +17,13 @@ import { Entry } from '../../types/entry.type';
   selector: 'mk-search',
   standalone: true,
   imports: [
-    StretchedLinkDirective,
-    SharedModule,
-    KeyboardComponent,
+    AsyncPipe,
     FormsModule,
+    KeyboardComponent,
     NgClass,
     ReactiveFormsModule,
-    AsyncPipe,
-    MatInput,
-    MatFormFieldModule,
-    MatInputModule,
-    MatAutocompleteModule,
+    SharedModule,
+    StretchedLinkDirective,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
@@ -56,8 +49,6 @@ export class SearchComponent implements OnInit {
       )
       .subscribe();
   }
-
-  ngAfterViewInit(): void {}
 
   keyClick(val: any) {
     const value = this.headwordControl.value! + val;

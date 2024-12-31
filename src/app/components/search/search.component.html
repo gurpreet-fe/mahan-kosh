@@ -43,7 +43,7 @@
     <mk-keyboard
       class="tiro-gurmukhi"
       (keyClick)="keyClick($event)"
-    ></mk-keyboard>
+      />
     }
 
     <div matAutocompleteOrigin #origin="matAutocompleteOrigin">
@@ -54,8 +54,12 @@
       >
         @for (entry of entryHits$ | async; track entry.id) {
         <mat-option [value]="entry.unicodeHeadword">
-          <a mkStretchedLink [routerLink]="'/entry/' + entry.unicodeHeadword">
-            {{ entry.unicodeHeadword }}
+          <a
+            mkStretchedLink
+            class="font-kahan-script"
+            [routerLink]="['/entry/', entry.unicodeHeadword]"
+          >
+            {{ entry.headword }}
           </a>
         </mat-option>
         }

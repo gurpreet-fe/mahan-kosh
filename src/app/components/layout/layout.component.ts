@@ -6,10 +6,11 @@ import {
   trigger,
 } from '@angular/animations';
 import {
+  ChangeDetectorRef,
   Component,
   HostBinding,
   OnInit,
-  signal
+  signal,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { tap } from 'rxjs';
@@ -30,7 +31,6 @@ import { Layout } from '../../types/layout.type';
     HeaderComponent,
     SearchComponent,
     FooterComponent,
-    RouterOutlet,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
@@ -41,7 +41,7 @@ import { Layout } from '../../types/layout.type';
         style({
           opacity: 1,
           'padding-top': '192px',
-          visible: 'visible',
+          visibility: 'visible',
         })
       ),
       state(
@@ -49,30 +49,34 @@ import { Layout } from '../../types/layout.type';
         style({
           opacity: 0,
           'padding-top': 0,
-          visible: 'hidden',
+          visibility: 'hidden',
         })
       ),
       transition('standard => compact', [animate('0.2s ease-in-out')]),
       transition('compact => standard', [animate('0.2s ease-in-out')]),
     ]),
   ],
+  host: {
+    'attr.mode': 'layoutMode',
+  },
 })
 export class LayoutComponent implements OnInit {
-  @HostBinding('attr.mode') get layoutMode(): Layout {
-    return this.#layoutMode;
-  }
-  #layoutMode: Layout = 'standard';
+  layoutMode: Layout = 'standard';
 
   layout$ = this.layoutFacade.layout$.pipe(
     tap((layout) => {
-      this.#layoutMode = layout;
+      this.layoutMode = layout;
+      this.cd.detectChanges();
     })
   );
 
   val = '';
   list = signal<any>(undefined);
 
-  constructor(private layoutFacade: LayoutFacade) {}
+  constructor(
+    private layoutFacade: LayoutFacade,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.layout$.subscribe();

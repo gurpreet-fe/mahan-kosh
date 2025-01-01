@@ -1,7 +1,7 @@
 .logo-container {
   position: relative;
   overflow: hidden;
-  will-change: transform;
+  will-change: opacity, visibility;
 }
 
 .logo {

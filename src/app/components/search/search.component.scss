@@ -70,3 +70,14 @@
 .mat-mdc-form-field {
   flex-grow: 1;
 }
+
+.keyboard {
+  transform: scaleY(0);
+  height: 0;
+  will-change: transform, height;
+
+  &.open {
+    transform: scaleY(1);
+    height: 100%;
+  }
+}

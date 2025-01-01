@@ -14,18 +14,18 @@ import { SharedModule } from '../../shared/shared.module';
 import { Entry } from '../../types/entry.type';
 
 @Component({
-    selector: 'mk-search',
-    imports: [
-        AsyncPipe,
-        FormsModule,
-        KeyboardComponent,
-        NgClass,
-        ReactiveFormsModule,
-        SharedModule,
-        StretchedLinkDirective,
-    ],
-    templateUrl: './search.component.html',
-    styleUrl: './search.component.scss'
+  selector: 'mk-search',
+  imports: [
+    AsyncPipe,
+    FormsModule,
+    KeyboardComponent,
+    NgClass,
+    ReactiveFormsModule,
+    SharedModule,
+    StretchedLinkDirective,
+  ],
+  templateUrl: './search.component.html',
+  styleUrl: './search.component.scss',
 })
 export class SearchComponent implements OnInit {
   @ViewChild(MatAutocompleteTrigger) acTrigger!: MatAutocompleteTrigger;

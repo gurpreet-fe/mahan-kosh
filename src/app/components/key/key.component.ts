@@ -1,11 +1,11 @@
 import { Component, HostBinding, output } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
+import { MatRipple } from '@angular/material/core';
 
 @Component({
-    selector: 'mk-key',
-    templateUrl: './key.component.html',
-    styleUrl: './key.component.scss',
-    imports: [SharedModule]
+  selector: 'mk-key',
+  templateUrl: './key.component.html',
+  styleUrl: './key.component.scss',
+  imports: [MatRipple],
 })
 export class KeyComponent {
   @HostBinding('class') class = 'key-container';

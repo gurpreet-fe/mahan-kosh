@@ -39,12 +39,10 @@
 
 <div class="relative">
   <div class="absolute left-0 right-0">
-    @if (showKeyboard) {
     <mk-keyboard
-      class="tiro-gurmukhi"
+      class="tiro-gurmukhi {{ showKeyboard ? 'open' : '' }}"
       (keyClick)="keyClick($event)"
-      />
-    }
+    />
 
     <div matAutocompleteOrigin #origin="matAutocompleteOrigin">
       <mat-autocomplete
